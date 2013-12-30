@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dnn-groupdocs-viewer-dotnet</name>
+    </assembly>
+    <members>
+        <member name="T:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Components.FeatureController">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Controller class for dnn_groupdocs_viewer_dotnet
+            
+            The FeatureController class is defined as the BusinessController in the manifest file (.dnn)
+            DotNetNuke will poll this class to find out which Interfaces the class implements. 
+            
+            The IPortable interface is used to import/export content from a DNN module
+            
+            The ISearchable interface is used by DNN to index the content of a module
+            
+            The IUpgradeable interface allows module developers to execute code during the upgrade 
+            process for a module.
+            
+            Below you will find stubbed out implementations of each, uncomment and populate with your own data
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Data.DataProvider">
+            -----------------------------------------------------------------------------
+            <summary>
+            An abstract class for the data access layer
+            
+            The abstract data provider provides the methods that a control data provider (sqldataprovider)
+            must implement. You'll find two commented out examples in the Abstract methods region below.
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Data.SqlDataProvider">
+            -----------------------------------------------------------------------------
+            <summary>
+            SQL Server implementation of the abstract DataProvider class
+            
+            This concreted data provider class provides the implementation of the abstract methods 
+            from data dataprovider.cs
+            
+            In most cases you will only modify the Public methods region below.
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Edit">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Editdnn_groupdocs_viewer_dotnet class is used to manage content
+            
+            Typically your edit control would be used to create new content, or edit existing content within your module.
+            The ControlKey for this control is "Edit", and is defined in the manifest (.dnn) file.
+            
+            Because the control inherits from dnn_groupdocs_viewer_dotnetModuleBase you have access to any custom properties
+            defined there, as well as properties from DNN such as PortalId, ModuleId, TabId, UserId and many more.
+            
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Edit.Title">
+            <summary>
+            Title control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Edit.txtDescription">
+            <summary>
+            txtDescription control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Edit.cmdUpdate">
+            <summary>
+            cmdUpdate control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Edit.cmdCancel">
+            <summary>
+            cmdCancel control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Settings">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Settings class manages Module Settings
+            
+            Typically your settings control would be used to manage settings for your module.
+            There are two types of settings, ModuleSettings, and TabModuleSettings.
+            
+            ModuleSettings apply to all "copies" of a module on a site, no matter which page the module is on. 
+            
+            TabModuleSettings apply only to the current module on the current page, if you copy that module to
+            another page the settings are not transferred.
+            
+            If you happen to save both TabModuleSettings and ModuleSettings, TabModuleSettings overrides ModuleSettings.
+            
+            Below we have some examples of how to access these settings but you will need to uncomment to use.
+            
+            Because the control inherits from dnn_groupdocs_viewer_dotnetSettingsBase you have access to any custom properties
+            defined there, as well as properties from DNN such as PortalId, ModuleId, TabId, UserId and many more.
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Settings.lblWidth">
+            <summary>
+            lblWidth control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Settings.txtWidth">
+            <summary>
+            txtWidth control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Settings.lblHeight">
+            <summary>
+            lblHeight control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Settings.txtHeight">
+            <summary>
+            txtHeight control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Settings.lblDefaultFileName">
+            <summary>
+            lblDefaultFileName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Settings.txtDefaultFileName">
+            <summary>
+            txtDefaultFileName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Settings.LoadSettings">
+            -----------------------------------------------------------------------------
+            <summary>
+            LoadSettings loads the settings from the Database and displays them
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Christoc.Modules.dnn_groupdocs_viewer_dotnet.Settings.UpdateSettings">
+            -----------------------------------------------------------------------------
+            <summary>
+            UpdateSettings saves the modified settings to the Database
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Christoc.Modules.dnn_groupdocs_viewer_dotnet.View">
+            -----------------------------------------------------------------------------
+            <summary>
+            The View class displays the content
+            
+            Typically your view control would be used to display content or functionality in your module.
+            
+            View may be the only control you have in your project depending on the complexity of your module
+            
+            Because the control inherits from dnn_groupdocs_viewer_dotnetModuleBase you have access to any custom properties
+            defined there, as well as properties from DNN such as PortalId, ModuleId, TabId, UserId and many more.
+            
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.View.Width">
+            <summary>
+            Width control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.View.Height">
+            <summary>
+            Height control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.View.DefaultFileName">
+            <summary>
+            DefaultFileName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Christoc.Modules.dnn_groupdocs_viewer_dotnet.View.Content">
+            <summary>
+            Content control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+    </members>
+</doc>

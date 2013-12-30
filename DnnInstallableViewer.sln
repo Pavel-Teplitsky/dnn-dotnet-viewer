@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{05643A83-E225-4411-82CD-3BA8D817286E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnn_groupdocs_viewer_dotnet", "dnn_groupdocs_viewer_dotnet.csproj", "{2B235259-7D51-41DF-814A-9C377F66412A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B235259-7D51-41DF-814A-9C377F66412A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B235259-7D51-41DF-814A-9C377F66412A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B235259-7D51-41DF-814A-9C377F66412A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B235259-7D51-41DF-814A-9C377F66412A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

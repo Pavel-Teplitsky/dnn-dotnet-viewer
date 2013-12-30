@@ -1,0 +1,244 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="Groupdocs.ViewerDotNet" type="Module" version="01.00.06">
+      <friendlyName>GroupDocs Viewer for .NET</friendlyName>
+      <description>GroupDocs Viewer for .NET plugin for DotNetNuke</description>
+      <iconFile>~/DesktopModules/dnn_groupdocs_viewer_dotnet/Images/icon.png</iconFile>
+      <owner>
+        <name>Groupdocs</name>
+        <organization>Groupdocs.com</organization>
+        <url>http://www.groupdocs.com</url>
+        <email>marketplace@groupdocs.com</email>
+      </owner>
+      <license src="License.txt"></license>
+      <releaseNotes src="ReleaseNotes.txt"></releaseNotes>
+      <dependencies>
+        <dependency type="CoreVersion">07.00.02</dependency>
+      </dependencies>
+
+      <components>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules\dnn_groupdocs_viewer_dotnet</basePath>
+            <script type="Install">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>00.00.01.SqlDataProvider</name>
+              <version>00.00.01</version>
+            </script>
+            <script type="UnInstall">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>Uninstall.SqlDataProvider</name>
+              <version>00.00.01</version>
+            </script>
+          </scripts>
+        </component>
+
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/dnn_groupdocs_viewer_dotnet</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+
+        <component type="Module">
+          <desktopModule>
+            <moduleName>dnn_groupdocs_viewer_dotnet</moduleName>
+            <foldername>dnn_groupdocs_viewer_dotnet</foldername>
+            <businessControllerClass>Christoc.Modules.dnn_groupdocs_viewer_dotnet.Components.FeatureController</businessControllerClass>
+            <supportedFeatures />
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>GroupDocs Viewer for .NET</friendlyName>
+                <defaultCacheTime>0</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey />
+                    <controlSrc>DesktopModules/dnn_groupdocs_viewer_dotnet/View.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>View</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Edit</controlKey>
+                    <controlSrc>DesktopModules/dnn_groupdocs_viewer_dotnet/Edit.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle>Edit Content</controlTitle>
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                    <supportsPopUps>True</supportsPopUps>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Settings</controlKey>
+                    <controlSrc>DesktopModules/dnn_groupdocs_viewer_dotnet/Settings.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle>GroupDocs Viewer for .NET Settings</controlTitle>
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <name>dnn-groupdocs-viewer-dotnet.dll</name>
+              <path>bin</path>
+            </assembly>
+            <assembly>
+              <name>Groupdocs.Viewer.dll</name>
+              <path>bin</path>
+            </assembly>
+            <assembly>
+              <name>Microsoft.Owin.Host.SystemWeb.dll</name>
+              <path>bin</path>
+            </assembly>
+            <assembly>
+              <name>Owin.dll</name>
+              <path>bin</path>
+            </assembly>
+            <assembly>
+              <name>System.Data.SqlServerCe.dll</name>
+              <path>bin</path>
+            </assembly>
+          </assemblies>
+        </component>
+        <!-- start changes -->
+        <!-- http://www.dnnsoftware.com/wiki/Page/Manifest-Component-Installers-The-Config-Component -->
+        <!-- http://www.dnnsoftware.com/wiki/Page/XML_Merge -->
+        <component type="Config">
+          <config>
+            <configFile>web.config</configFile>
+            <install>
+              <configuration>
+                <nodes>
+                  <node path="/configuration/system.webServer/handlers" action="add" collision="overwrite">
+                    <add name="ViewDocumentHandler" verb="*" path="document-viewer/ViewDocumentHandler" type="Groupdocs.Web.UI.Handlers.ViewDocumentHandler, Groupdocs.Viewer, Culture=neutral"/>
+                  </node>
+                  <node path="/configuration/system.webServer/handlers" action="add" collision="overwrite">
+                    <add name="GetDocumentPageImageHandler" verb="*" path="document-viewer/GetDocumentPageImageHandler" type="Groupdocs.Web.UI.Handlers.GetDocumentPageImageHandler, Groupdocs.Viewer,Culture=neutral" />
+                  </node>
+                  <node path="/configuration/system.webServer/handlers" action="add" collision="overwrite">
+                    <add name="LoadFileBrowserTreeDataHandler" verb="*" path="document-viewer/LoadFileBrowserTreeDataHandler" type="Groupdocs.Web.UI.Handlers.LoadFileBrowserTreeDataHandler, Groupdocs.Viewer, Culture=neutral" />
+                  </node>
+                  <node path="/configuration/system.webServer/handlers" action="add" collision="overwrite">
+                    <add name="GetImageUrlsHandler" verb="*" path="document-viewer/GetImageUrlsHandler" type="Groupdocs.Web.UI.Handlers.GetImageUrlsHandler, Groupdocs.Viewer, Culture=neutral" />
+                  </node>
+                  <node path="/configuration/system.webServer/handlers" action="add" collision="overwrite">
+                    <add name="GetCssHandler" verb="GET" path="document-viewer/CSS/GetCssHandler" type="Groupdocs.Web.UI.Handlers.CssHandler, Groupdocs.Viewer, Culture=neutral" />
+                  </node>
+                  <node path="/configuration/system.webServer/handlers" action="add" collision="overwrite">
+                    <add name="GetScriptHandler" verb="GET,POST" path="document-viewer/GetScriptHandler" type="Groupdocs.Web.UI.Handlers.ScriptHandler, Groupdocs.Viewer, Culture=neutral" />
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="GET" path="document-viewer/images/*" type="Groupdocs.Web.UI.Handlers.EmbeddedImageHandler, Groupdocs.Viewer, Culture=neutral"/>
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="GET" path="groupdocs/images/*" type="Groupdocs.Web.UI.Handlers.EmbeddedImageHandler, Groupdocs.Viewer, Culture=neutral"/>
+                  </node>
+                  <node path="/configuration/system.webServer/handlers" action="add" collision="overwrite">
+                    <add name="GetFileHandler" verb="GET" path="document-viewer/GetFileHandler" type="Groupdocs.Web.UI.Handlers.GetFileHandler, Groupdocs.Viewer, Culture=neutral" />
+                  </node>
+                  <node path="/configuration/system.webServer/handlers" action="add" collision="overwrite">
+                    <add name="GetPdf2XmlHandler" verb="POST" path="document-viewer/GetPdf2XmlHandler" type="Groupdocs.Web.UI.Handlers.GetPdf2XmlHandler, Groupdocs.Viewer, Culture=neutral" />
+                  </node>
+                  <node path="/configuration/system.webServer/handlers" action="add" collision="overwrite">
+                    <add name="GetPdfWithPrintDialogHandler" verb="GET,POST" path="document-viewer/GetPdfWithPrintDialogHandler" type="Groupdocs.Web.UI.Handlers.GetPdfWithPrintDialogHandler, Groupdocs.Viewer, Culture=neutral" />
+                  </node>
+                  <node path="/configuration/system.webServer/handlers" action="add" collision="overwrite">
+                    <add name="EmbeddedImageHandler" verb="GET" path="document-viewer/images/*" type="Groupdocs.Web.UI.Handlers.EmbeddedImageHandler, Groupdocs.Viewer, Culture=neutral"/>
+                  </node>
+                  <node path="/configuration/system.webServer/handlers" action="add" collision="overwrite">
+                    <add name="EmbeddedImageHandler2" verb="GET" path="groupdocs/images/*" type="Groupdocs.Web.UI.Handlers.EmbeddedImageHandler, Groupdocs.Viewer, Culture=neutral"/>
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="*" path="document-viewer/ViewDocumentHandler" type="Groupdocs.Web.UI.Handlers.ViewDocumentHandler, Groupdocs.Viewer, Culture=neutral" validate="false"/>
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="*" path="document-viewer/GetDocumentPageImageHandler" type="Groupdocs.Web.UI.Handlers.GetDocumentPageImageHandler, Groupdocs.Viewer, Culture=neutral" validate="false" />
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="*" path="document-viewer/LoadFileBrowserTreeDataHandler" type="Groupdocs.Web.UI.Handlers.LoadFileBrowserTreeDataHandler, Groupdocs.Viewer, Culture=neutral" validate="false" />
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="*" path="document-viewer/GetImageUrlsHandler" type="Groupdocs.Web.UI.Handlers.GetImageUrlsHandler, Groupdocs.Viewer, Culture=neutral" validate="false" />
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="GET" path="document-viewer/CSS/GetCssHandler" type="Groupdocs.Web.UI.Handlers.CssHandler, Groupdocs.Viewer, Culture=neutral"/>
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="GET" path="document-viewer/images/*" type="Groupdocs.Web.UI.Handlers.EmbeddedImageHandler, Groupdocs.Viewer, Culture=neutral"/>
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="GET" path="groupdocs/images/*" type="Groupdocs.Web.UI.Handlers.EmbeddedImageHandler, Groupdocs.Viewer, Culture=neutral"/>
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="GET,POST" path="document-viewer/GetScriptHandler" type="Groupdocs.Web.UI.Handlers.ScriptHandler, Groupdocs.Viewer, Cul-ture=neutral"/>
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="GET" path="document-viewer/GetFileHandler" type="Groupdocs.Web.UI.Handlers.GetFileHandler, Groupdocs.Viewer, Culture=neutral" validate="false"/>
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="POST" path="document-viewer/GetPdf2XmlHandler" type="Groupdocs.Web.UI.Handlers.GetPdf2XmlHandler, Groupdocs.Viewer, Culture=neutral"/>
+                  </node>
+                  <node path="/configuration/system.web/httpHandlers" action="add" collision="overwrite">
+                    <add verb="GET,POST" path="document-viewer/GetPdfWithPrintDia-logHandler" type="Groupdocs.Web.UI.Handlers.GetPdfWithPrintDialogHandler, Groupdocs.Viewer, Culture=neutral"/>
+                  </node>
+                </nodes>
+              </configuration>
+            </install>
+            <uninstall>
+              <configuration>
+                <nodes>
+                  <node path="/configuration/connectionStrings/add[@name='SaasposeDb']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='ViewDocumentHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='GetDocumentPageImageHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='LoadFileBrowserTreeDataHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='GetImageUrlsHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='GetCssHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='EmbeddedImageHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='EmbeddedImageHandler2']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='GetScriptHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='GetFileHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='GetPdf2XmlHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='GetPdf2JavaScriptHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='GetPdfWithPrintDialogHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='ViewerHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='ViewerCssHandler']" action="remove" />
+                  <node path="/configuration/system.webServer/handlers/add[@name='ViewerImagesHandler']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/ViewDocumentHandler']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/GetDocumentPageImageHandler']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/LoadFileBrowserTreeDataHandler']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/GetImageUrlsHandler']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/CSS/GetCssHandler']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/images/*']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='groupdocs/images/*']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/GetScriptHandler']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/GetFileHandler']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/GetPdf2XmlHandler']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/GetPdf2JavaScriptHandler']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/GetPdfWithPrintDialogHandler']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/*']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/CSS/*']" action="remove" />
+                  <node path="/configuration/system.web/httpHandlers/add[@path='document-viewer/images/*']" action="remove" />
+                </nodes>
+              </configuration>
+            </uninstall>
+          </config>
+        </component>
+
+        <!-- end changes -->
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>

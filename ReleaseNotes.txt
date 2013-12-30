@@ -1,0 +1,23 @@
+﻿<h3>GroupDocs Viewer for .NET</h3>
+<p class="Contributor">
+	Groupdocs.com <br />
+	<a href="mailto:marketplace@groupdocs.com">mailto:marketplace@groupdocs.com</a><br />
+	<a href=http://www.groupdocs.com>http://www.groupdocs.com</a><br />
+</p>
+<hr/>
+<div class="License">
+	<h3>About the GroupDocs Viewer for .NET</h3>
+	<p class="Owner">
+		<b>Version 01.00.06</b><br /><br />
+	</p>
+	<p>Updated module details and added functional for use current username for annotate document.</p>
+	<!--
+	<h4>Bug Fixes</h4>
+	<ul>
+			<li>List</li>
+			<li>of</li>
+			<li>bug</li>
+			<li>fixes</li>
+	</ul>
+	-->	
+</div>
