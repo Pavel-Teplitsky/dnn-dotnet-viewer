@@ -66,7 +66,7 @@ namespace Christoc.Modules.dnn_groupdocs_viewer_dotnet
                                 + "/DesktopModules/dnn_groupdocs_viewer_dotnet/";
                             
                             Viewer.SetBaseUrl(BaseUrl);
-                            Viewer.SetRootStoragePath(@"~/App_Data", @"~/DesktopModules/dnn_groupdocs_viewer_dotnet");
+                            Viewer.SetRootStoragePath("Z:/home/DNN Platform/DesktopModules/dnn_groupdocs_viewer_dotnet/App_Data");
                             Viewer.EnableFileListRequestHandling(true);
                             isStarted = true;
                         }
